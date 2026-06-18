@@ -3,7 +3,7 @@
     <section class="hero section">
       <div class="hero__intro">
         <p class="eyebrow">Web Frontend Portfolio</p>
-        <h1>Hi, I'm <span>姓名待补充</span></h1>
+        <h1>Hi, I'm <span>陈乐臻</span></h1>
         <p class="hero__role">Web 前端开发实习</p>
         <p class="hero__text">
           专注于 Vue3 + Spring Boot 全栈开发，熟悉前端工程化、项目开发和部署流程，
@@ -12,7 +12,7 @@
 
         <div class="hero__contact">
           <span>Location · China</span>
-          <span>Email · your_email@example.com</span>
+          <span>Email · 14776743270@163.com</span>
           <span>GitHub · Cherry-zr</span>
         </div>
 

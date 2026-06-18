@@ -16,8 +16,8 @@
       </article>
       <article class="content-card">
         <h2>邮箱</h2>
-        <p>your_email@example.com</p>
-        <a class="text-button" href="mailto:your_email@example.com">
+        <p>14776743270@163.com</p>
+        <a class="text-button" href="mailto:14776743270@163.com">
           发送邮件 <span aria-hidden="true">→</span>
         </a>
       </article>

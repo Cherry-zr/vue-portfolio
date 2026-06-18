@@ -21,7 +21,7 @@
         <dl class="info-list">
           <div>
             <dt>学校</dt>
-            <dd>待补充</dd>
+            <dd>昆明文理学院</dd>
           </div>
           <div>
             <dt>专业</dt>
