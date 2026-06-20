@@ -23,7 +23,10 @@ export const useProjectStore = defineStore("projectStore", {
           !keyword ||
           item.title.toLowerCase().includes(keyword) ||
           item.description.toLowerCase().includes(keyword) ||
-          item.category.toLowerCase().includes(keyword);
+          item.category.toLowerCase().includes(keyword) ||
+          item.seller.toLowerCase().includes(keyword) ||
+          item.location.toLowerCase().includes(keyword) ||
+          item.features.some((feature) => feature.toLowerCase().includes(keyword));
         return matchCategory && matchKeyword;
       });
     }

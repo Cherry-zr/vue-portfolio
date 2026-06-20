@@ -65,13 +65,13 @@
 
     <article class="content-card">
       <h2>项目截图区域</h2>
-      <CampusPreview v-if="project.slug === 'campus-market'" />
-      <div v-else class="screenshot-grid">
+      <div v-if="project.screenshots?.length" class="screenshot-grid">
         <figure v-for="screenshot in project.screenshots" :key="screenshot.src">
           <img :src="assetUrl(screenshot.src)" :alt="screenshot.title" />
           <figcaption>{{ screenshot.title }}</figcaption>
         </figure>
       </div>
+      <p v-else>暂无截图，后续会补充真实运行页面。</p>
     </article>
   </section>
 
@@ -84,7 +84,6 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-import CampusPreview from "../components/CampusPreview.vue";
 import SectionHeader from "../components/SectionHeader.vue";
 import TagList from "../components/TagList.vue";
 import { useProjectStore } from "../stores/projectStore";

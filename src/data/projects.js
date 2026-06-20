@@ -4,7 +4,7 @@ export const projects = [
     title: "校园二手交易平台",
     subtitle: "主项目 · 本地源码 + 静态演示",
     role: "前端与全栈功能实现",
-    sourcePath: "D:\\codex\\campus-market-2026-github",
+    sourcePath: "D:\\codex\\campus-market-2026",
     summary: "面向校园场景的二手物品交易平台，覆盖商品发布、搜索分类、详情浏览、订单、收藏、聊天和后台审核等流程。",
     description:
       "项目原型为 Vue3 + Spring Boot + MySQL 全栈系统。作品集中的在线 Demo 使用本地 mock 数据复现核心前端流程，适合在 GitHub Pages 中静态展示，不依赖真实后端接口。",
@@ -20,7 +20,14 @@ export const projects = [
         solution: "把商品浏览、发布、个人中心作为主线，其余订单、聊天、审核作为项目详情中的扩展能力说明。"
       }
     ],
-    screenshots: [],
+    screenshots: [
+      { title: "首页与商品列表", src: "assets/campus/home.png" },
+      { title: "商品详情", src: "assets/campus/goods-detail.png" },
+      { title: "发布商品", src: "assets/campus/publish.png" },
+      { title: "订单管理", src: "assets/campus/orders.png" },
+      { title: "消息中心", src: "assets/campus/chat.png" },
+      { title: "管理后台", src: "assets/campus/admin.png" }
+    ],
     demoRoute: "/demo/campus-market",
     githubUrl: "",
     highlight: true

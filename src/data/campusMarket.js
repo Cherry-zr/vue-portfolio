@@ -1,97 +1,123 @@
-export const campusCategories = ["全部", "数码", "书籍", "生活", "运动", "文具"];
+export const campusCategories = ["全部", "数码设备", "教材资料", "宿舍生活", "运动户外", "票券周边"];
 
 export const campusGoods = [
   {
     id: "keyboard",
-    title: "机械键盘 青轴",
-    category: "数码",
-    price: 120,
+    title: "九成新 iPad 10.2",
+    category: "数码设备",
+    categoryLabel: "数码设备",
+    price: 1899,
     condition: "九成新",
-    seller: "李同学",
-    location: "信息楼",
+    seller: "林同学",
+    location: "图书馆东门",
     postedAt: "2 小时前",
-    description: "自用机械键盘，按键正常，适合宿舍学习和开发使用。",
-    features: ["支持校园内面交", "键帽完整", "适合编程输入"],
-    status: "在售"
+    description: "平时主要用来做课堂笔记，屏幕和机身保护良好，附带保护壳，建议图书馆或教学楼附近当面交易。",
+    features: ["支持校园内面交", "附保护壳", "适合课堂笔记"],
+    status: "在售",
+    statusCode: "ON_SALE",
+    image: "assets/campus/goods-detail.png"
   },
   {
     id: "backpack",
-    title: "双肩包 九成新",
-    category: "生活",
-    price: 60,
-    condition: "九成新",
-    seller: "王同学",
+    title: "计算机网络教材套装",
+    category: "教材资料",
+    categoryLabel: "教材资料",
+    price: 68,
+    condition: "八成新",
+    seller: "周同学",
     location: "图书馆",
     postedAt: "1 天前",
-    description: "容量较大，可放电脑和书本，适合通勤或上课使用。",
-    features: ["容量充足", "拉链顺滑", "外观简洁"],
-    status: "在售"
+    description: "计算机网络课程教材和习题册一套，重点章节有少量标注，适合期末复习和课程预习。",
+    features: ["教材资料", "有重点标注", "适合复习"],
+    status: "在售",
+    statusCode: "ON_SALE",
+    image: "assets/campus/home.png"
   },
   {
     id: "basketball",
-    title: "篮球 七成新",
-    category: "运动",
-    price: 40,
-    condition: "七成新",
-    seller: "张同学",
-    location: "东操场",
+    title: "羽毛球拍和护腕",
+    category: "运动户外",
+    categoryLabel: "运动户外",
+    price: 89,
+    condition: "八成新",
+    seller: "陈同学",
+    location: "体育馆南门",
     postedAt: "2 天前",
-    description: "日常训练使用，弹性正常，适合课余运动。",
-    features: ["手感稳定", "适合室外场地", "可议价"],
-    status: "在售"
+    description: "球拍线还比较新，护腕清洗后保存，适合体育课和社团训练，价格可小刀。",
+    features: ["运动社团", "手感稳定", "可议价"],
+    status: "在售",
+    statusCode: "ON_SALE",
+    image: "assets/campus/home.png"
   },
   {
     id: "book",
-    title: "JavaScript 高级程序设计",
-    category: "书籍",
+    title: "宿舍小台灯",
+    category: "宿舍生活",
+    categoryLabel: "宿舍生活",
     price: 35,
-    condition: "八成新",
-    seller: "陈同学",
-    location: "宿舍区",
+    condition: "九成新",
+    seller: "王同学",
+    location: "西区宿舍",
     postedAt: "3 天前",
-    description: "前端基础进阶书籍，有少量笔记，不影响阅读。",
-    features: ["前端学习", "有重点标注", "适合自学"],
-    status: "在售"
+    description: "三档亮度调节，晚上看书写作业够用，毕业搬宿舍出闲置。",
+    features: ["亮度可调", "宿舍可用", "小件好面交"],
+    status: "待审核",
+    statusCode: "PENDING",
+    image: "assets/campus/home.png"
   },
   {
     id: "lamp",
-    title: "护眼台灯",
-    category: "生活",
-    price: 50,
-    condition: "九成新",
+    title: "二手山地车",
+    category: "运动户外",
+    categoryLabel: "运动户外",
+    price: 320,
+    condition: "七成新",
     seller: "赵同学",
-    location: "西区宿舍",
+    location: "东操场",
     postedAt: "4 天前",
-    description: "亮度可调，适合晚间阅读和写代码。",
-    features: ["亮度可调", "体积小", "适合宿舍"],
-    status: "在售"
+    description: "日常校内通勤使用，刹车正常，车铃和脚撑可用，建议现场试骑后交易。",
+    features: ["校内通勤", "可现场试骑", "价格可谈"],
+    status: "待审核",
+    statusCode: "PENDING",
+    image: "assets/campus/admin.png"
   },
   {
     id: "notebook",
-    title: "A5 笔记本套装",
-    category: "文具",
-    price: 18,
+    title: "校园演唱会票",
+    category: "票券周边",
+    categoryLabel: "票券周边",
+    price: 45,
     condition: "全新",
     seller: "刘同学",
-    location: "教学楼",
+    location: "教学楼 A 区",
     postedAt: "5 天前",
-    description: "未拆封笔记本和便签组合，适合课堂记录。",
-    features: ["全新未拆", "轻便", "适合学习"],
-    status: "在售"
+    description: "临时有课去不了，原价转让，支持现场核验票面信息后交易。",
+    features: ["票券周边", "可现场核验", "原价转让"],
+    status: "在售",
+    statusCode: "ON_SALE",
+    image: "assets/campus/orders.png"
   }
 ];
 
 export const campusProfile = {
-  nickname: "李同学",
-  role: "普通会员",
+  nickname: "林同学",
+  role: "普通会员 · 已完成校园认证",
   published: 12,
   favorites: 8,
   views: 56,
+  orders: 3,
   menus: ["我的发布", "我的收藏", "浏览记录", "账号设置"]
 };
 
 export const campusMessages = [
-  { from: "seller", text: "你好，键盘还在，可以在信息楼附近面交。" },
-  { from: "me", text: "可以，我下午 4 点左右过去看一下。" },
-  { from: "seller", text: "没问题，我会提前带过去。" }
+  { from: "seller", name: "周同学", text: "你好，计算机网络教材还在吗？" },
+  { from: "me", name: "我", text: "还在，教材和习题册都保存得很好。" },
+  { from: "seller", name: "周同学", text: "我今晚 7 点可以在图书馆门口取。" },
+  { from: "me", name: "我", text: "可以，我会提前带过去。" }
+];
+
+export const campusOrders = [
+  { id: "CM20260602001", title: "九成新 iPad 10.2", amount: 1899, status: "待支付" },
+  { id: "CM20260602002", title: "计算机网络教材套装", amount: 68, status: "已支付" },
+  { id: "CM20260602003", title: "宿舍小台灯", amount: 35, status: "已完成" }
 ];

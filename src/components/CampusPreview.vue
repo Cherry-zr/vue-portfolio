@@ -5,14 +5,14 @@
       <div class="preview-input">搜索商品、类别、用户</div>
       <div class="preview-tabs">
         <span>全部</span>
-        <span>数码</span>
-        <span>书籍</span>
-        <span>生活</span>
+        <span>数码设备</span>
+        <span>教材资料</span>
+        <span>宿舍生活</span>
       </div>
       <div class="preview-category-grid">
-        <span>运动</span>
-        <span>文具</span>
-        <span>其他</span>
+        <span>运动户外</span>
+        <span>票券周边</span>
+        <span>审核</span>
         <span>校园</span>
       </div>
     </div>
@@ -31,7 +31,7 @@
     <div class="preview-column">
       <h3>个人中心</h3>
       <div class="preview-profile">
-        <div class="avatar-mark" aria-hidden="true">李</div>
+        <div class="avatar-mark" aria-hidden="true">{{ profile.nickname.slice(0, 1) }}</div>
         <div>
           <strong>{{ profile.nickname }}</strong>
           <span>{{ profile.role }}</span>
@@ -40,6 +40,7 @@
       <div class="preview-stats">
         <span><strong>{{ profile.published }}</strong>发布</span>
         <span><strong>{{ profile.favorites }}</strong>收藏</span>
+        <span><strong>{{ profile.orders }}</strong>订单</span>
         <span><strong>{{ profile.views }}</strong>足迹</span>
       </div>
       <div class="preview-menu">
