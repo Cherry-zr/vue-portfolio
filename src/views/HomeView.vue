@@ -67,7 +67,7 @@
       <div>
         <span class="about-kicker">关于我</span>
         <strong>教育背景</strong>
-        <p>计算机相关专业（待补充）</p>
+        <p>计算机科学与技术</p>
       </div>
       <div>
         <span class="about-kicker">项目经验</span>
@@ -81,7 +81,7 @@
       </div>
       <div>
         <span class="about-kicker">联系方式</span>
-        <strong>GitHub / 邮箱</strong>
+        <strong>GitHub / 14776743270@163.com</strong>
         <p>用于作品沟通与源码查看</p>
       </div>
     </section>
