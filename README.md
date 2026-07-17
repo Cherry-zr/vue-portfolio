@@ -1,31 +1,47 @@
 # Vue Portfolio
 
-一个用于 Web 前端实习面试展示的黑白极简个人作品展示站。项目使用 Vue3 + Vite + Vue Router + Pinia 构建，重点展示个人信息、技术栈、项目经验和静态 Demo。
+一个面向 Web 前端实习与初级前端岗位的黑白灰极简个人作品展示站。项目使用 Vue 3、Vite、Vue Router 和 Pinia 构建，重点展示复杂业务前端、全栈实践、工程化交付与静态 Demo。
 
 ## 项目特点
 
-- 黑白灰极简视觉风格，参考现代作品集网站、简历网站、Apple 官网式留白和 Notion 式排版。
-- 首页采用左右分栏布局，突出主项目“校园二手交易平台”。
-- 不接入真实后端，不使用数据库，GitHub Pages 上展示静态 mock 数据。
-- 不展示手机号，不提供 PDF 简历下载，网站主要用于作品展示。
-- 路由使用 hash 模式，避免 GitHub Pages 刷新 404。
+- 首页主项目为 CityParty——同城活动发现与陌生人组局平台。
+- 使用真实运行截图展示移动端 H5、地图、WebSocket 群聊和管理员数据看板。
+- 项目数据集中维护，Demo、GitHub 和工程质量区域按字段条件渲染。
+- 校园二手交易平台保留完整静态 Demo 和相关交互路由。
+- 路由使用 hash 模式，兼容 GitHub Pages 刷新访问。
+- 保持黑白灰极简风格，并适配桌面端、平板和移动端。
 
 ## 技术栈
 
-- Vue3
+- Vue 3
+- JavaScript
 - Vite
 - Vue Router
 - Pinia
 - 原生 CSS
 
+## 项目列表
+
+1. **同城活动发现与陌生人组局平台**：当前主项目，包含 Vue 3 移动端、Element Plus 管理后台、地图、报名候补、WebSocket 群聊、ECharts 看板及 Spring Boot 后端。项目支持本地完整演示，暂未部署公网业务 Demo。
+2. **校园二手交易平台**：早期全栈实践，作品集保留基于 mock 数据的 GitHub Pages 静态 Demo。
+3. **LuxeStay 酒店管理系统**：传统 Java Web 管理系统，展示后台业务模块和页面截图。
+4. **电影评分数据分析与可视化**：使用 Python 完成数据清洗、统计分析、图表与报告生成。
+
+CityParty 公开源码：
+
+```text
+https://github.com/Cherry-zr/city-party-platform
+```
+
 ## 页面
 
-- 首页：个人介绍、求职方向、核心技术栈、主项目预览
-- 关于我：教育背景占位、个人简介、求职方向
-- 技能栈：前端、后端、数据库、工具分类展示
-- 项目展示：校园二手交易平台、LuxeStay 酒店管理系统、电影评分数据分析与可视化
-- 项目详情：项目介绍、技术栈、功能模块、难点与解决方案、截图区域、Demo 链接
-- 联系方式：GitHub 与邮箱占位
+- 首页：个人定位、核心技术栈、CityParty 主项目预览和四个精选项目
+- 关于我：个人简介、教育背景和求职方向
+- 技能栈：前端、后端、数据库和工具分类
+- 项目展示：全部项目及可用的 Demo、GitHub 入口
+- 项目详情：项目介绍、技术栈、功能模块、难点、工程质量和真实截图
+- 静态 Demo：校园二手、酒店管理和电影数据分析展示
+- 联系方式：GitHub 与邮箱
 
 ## 本地运行
 
@@ -34,11 +50,11 @@
 - Node.js 24 或更高版本
 - npm 11 或更高版本
 
-请在项目根目录执行：
+在项目根目录执行：
 
 ```powershell
-cd D:\GitHub_code\vue_show
-npm install
+Set-Location <your-project-directory>
+npm ci
 npm run dev
 ```
 
@@ -48,50 +64,44 @@ npm run dev
 http://localhost:5173/
 ```
 
-## 构建
+## 构建与预览
 
 ```powershell
 npm run build
+npm run preview
 ```
 
-构建产物在：
-
-```text
-dist
-```
+构建产物位于 `dist`。
 
 ## GitHub Pages 部署
 
-当前仓库计划部署到：
+部署地址：
 
 ```text
-https://cherry-zr.github.io/vue-portfolio/
+https://cherry-zr.github.io/vue-portfolio/#/
 ```
 
-因此 `vite.config.js` 已配置：
+`vite.config.js` 已配置仓库基础路径：
 
 ```js
 base: "/vue-portfolio/"
 ```
 
-部署方式：
+仓库使用 `.github/workflows/deploy.yml` 部署：
 
-1. 将本项目推送到 `https://github.com/Cherry-zr/vue-portfolio`
-2. 进入 GitHub 仓库 Settings
-3. 打开 Pages
-4. Source 选择 GitHub Actions
-5. 推送到 `main` 分支后，`.github/workflows/deploy.yml` 会自动构建并部署
+1. GitHub Pages Source 选择 GitHub Actions。
+2. 推送到 `main` 分支后自动安装依赖并构建。
+3. 工作流上传 `dist` 并发布到 GitHub Pages。
 
-## 原项目说明
+## 展示边界
 
-作品集内容参考了本机项目源码，但不会修改原项目：
-
-- 校园二手交易平台：`D:\codex\campus-market-2026-github`
-- 酒店管理系统：`D:\web_last\hotel`
-- Python 电影评分数据分析：`D:\last_python\movie_rating_analysis`
+- CityParty 当前提供公开源码、本地完整演示和真实截图，不提供虚假的公网在线 Demo。
+- 作品集中的工程质量数据均来自项目仓库的历史验收记录，不作为线上生产指标。
+- 页面不会公开本机绝对路径、环境变量、密码、Token、地图 Key 或数据库凭据。
+- 饭先食谱 App 尚未加入公开项目列表，需在提供源码、截图和完整资料后再补充。
 
 ## 推荐提交信息
 
 ```text
-feat: create minimalist project portfolio site
+feat: feature CityParty in portfolio
 ```

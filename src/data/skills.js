@@ -1,15 +1,15 @@
 export const coreSkills = [
-  "Vue3",
-  "JavaScript",
+  "Vue 3",
   "TypeScript",
+  "JavaScript",
   "Vite",
-  "Pinia",
   "Vue Router",
+  "Pinia",
   "Axios",
-  "Spring Boot",
-  "MySQL",
-  "Git",
-  "Nginx"
+  "Vant",
+  "Element Plus",
+  "ECharts",
+  "Git"
 ];
 
 export const skillGroups = [

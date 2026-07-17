@@ -3,7 +3,7 @@
     <SectionHeader
       eyebrow="Projects"
       title="项目展示"
-      description="重点展示本机源码项目和静态 Demo，突出项目结构、功能模块和技术栈。"
+      description="展示项目结构、业务功能、技术难点、工程质量与可访问的静态 Demo。"
     />
 
     <div class="project-list">
@@ -16,7 +16,16 @@
         </div>
         <div class="project-row__actions">
           <RouterLink class="btn btn-primary" :to="`/projects/${project.slug}`">查看详情</RouterLink>
-          <RouterLink class="btn btn-secondary" :to="project.demoRoute">在线 Demo</RouterLink>
+          <RouterLink v-if="project.demoRoute" class="btn btn-secondary" :to="project.demoRoute">在线 Demo</RouterLink>
+          <a
+            v-if="project.githubUrl"
+            class="btn btn-secondary"
+            :href="project.githubUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub 源码
+          </a>
         </div>
       </article>
     </div>

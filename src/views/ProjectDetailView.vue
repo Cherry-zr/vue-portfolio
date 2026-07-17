@@ -9,17 +9,16 @@
         <p>{{ project.description }}</p>
       </div>
       <div class="detail-actions">
-        <RouterLink class="btn btn-primary" :to="project.demoRoute">查看在线 Demo</RouterLink>
+        <RouterLink v-if="project.demoRoute" class="btn btn-primary" :to="project.demoRoute">查看在线 Demo</RouterLink>
         <a
-          class="btn btn-secondary"
-          :href="project.githubUrl || '#'"
-          :aria-disabled="!project.githubUrl"
-          :class="{ disabled: !project.githubUrl }"
+          v-if="project.githubUrl"
+          class="btn"
+          :class="project.demoRoute ? 'btn-secondary' : 'btn-primary'"
+          :href="project.githubUrl"
           target="_blank"
-          rel="noreferrer"
-          @click="handleEmptyLink"
+          rel="noopener noreferrer"
         >
-          {{ project.githubUrl ? "GitHub 源码" : "GitHub 待补充" }}
+          GitHub 源码
         </a>
       </div>
     </div>
@@ -33,9 +32,17 @@
             <dt>我的角色</dt>
             <dd>{{ project.role }}</dd>
           </div>
-          <div>
-            <dt>源码路径</dt>
-            <dd>{{ project.sourcePath }}</dd>
+          <div v-if="project.status">
+            <dt>项目状态</dt>
+            <dd>{{ project.status }}</dd>
+          </div>
+          <div v-if="project.githubUrl">
+            <dt>项目仓库</dt>
+            <dd>
+              <a class="inline-link" :href="project.githubUrl" target="_blank" rel="noopener noreferrer">
+                GitHub 公开源码
+              </a>
+            </dd>
           </div>
         </dl>
       </article>
@@ -63,15 +70,29 @@
       </div>
     </article>
 
-    <article class="content-card">
+    <article v-if="project.quality?.length" class="content-card">
+      <h2>测试与工程质量</h2>
+      <p class="quality-note">以下为项目仓库中的历史验收记录，不代表线上生产指标。</p>
+      <ul class="check-list">
+        <li v-for="item in project.quality" :key="item">{{ item }}</li>
+      </ul>
+    </article>
+
+    <article v-if="project.screenshots?.length" class="content-card">
       <h2>项目截图区域</h2>
-      <div v-if="project.screenshots?.length" class="screenshot-grid">
+      <div class="screenshot-grid">
         <figure v-for="screenshot in project.screenshots" :key="screenshot.src">
-          <img :src="assetUrl(screenshot.src)" :alt="screenshot.title" />
+          <a
+            :href="assetUrl(screenshot.src)"
+            :aria-label="`查看${screenshot.title}原图`"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img :src="assetUrl(screenshot.src)" :alt="screenshot.title" loading="lazy" />
+          </a>
           <figcaption>{{ screenshot.title }}</figcaption>
         </figure>
       </div>
-      <p v-else>暂无截图，后续会补充真实运行页面。</p>
     </article>
   </section>
 
@@ -92,10 +113,4 @@ import { assetUrl } from "../utils/assets";
 const route = useRoute();
 const projectStore = useProjectStore();
 const project = computed(() => projectStore.getProjectBySlug(route.params.slug));
-
-function handleEmptyLink(event) {
-  if (!project.value?.githubUrl) {
-    event.preventDefault();
-  }
-}
 </script>

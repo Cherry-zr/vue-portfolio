@@ -6,8 +6,8 @@
         <h1>Hi, I'm <span>陈乐臻</span></h1>
         <p class="hero__role">Web 前端开发实习</p>
         <p class="hero__text">
-          专注于 Vue3 + Spring Boot 全栈开发，熟悉前端工程化、项目开发和部署流程，
-          能够将真实业务拆解为清晰、可维护、可展示的 Web 应用。
+          专注于 Vue 3 前端开发，具备移动端 H5、后台管理、接口联调、状态管理和前端工程化实践，
+          同时能够完成 Spring Boot 后端开发与完整项目交付。
         </p>
 
         <div class="hero__contact">
@@ -17,8 +17,16 @@
         </div>
 
         <div class="hero__actions">
-          <RouterLink class="btn btn-primary" to="/projects">查看项目</RouterLink>
-          <RouterLink class="btn btn-secondary" to="/demo/campus-market">查看主项目 Demo</RouterLink>
+          <RouterLink class="btn btn-primary" :to="`/projects/${featured.slug}`">查看项目详情</RouterLink>
+          <a
+            v-if="featured.githubUrl"
+            class="btn btn-secondary"
+            :href="featured.githubUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub 源码
+          </a>
         </div>
       </div>
 
@@ -28,7 +36,7 @@
             <p class="panel-label">Featured Project</p>
             <h2>{{ featured.title }}</h2>
           </div>
-          <span class="status-pill">本地项目 · 静态演示</span>
+          <span class="status-pill">{{ featured.status }}</span>
         </div>
 
         <p class="panel-copy">
@@ -39,7 +47,7 @@
           <li v-for="feature in featured.features.slice(0, 3)" :key="feature">{{ feature }}</li>
         </ul>
 
-        <CampusPreview />
+        <CityPartyPreview :screenshots="featured.screenshots" />
       </aside>
     </section>
 
@@ -53,7 +61,7 @@
         <SectionHeader
           eyebrow="Selected Work"
           title="精选项目"
-          description="项目均来自本机源码或本地实践，在线部分使用静态 mock 数据展示。"
+          description="展示复杂业务型 Vue 项目、早期全栈实践、传统管理系统与数据分析项目。"
         />
         <RouterLink class="text-button" to="/projects">查看全部项目 <span aria-hidden="true">→</span></RouterLink>
       </div>
@@ -71,7 +79,7 @@
       </div>
       <div>
         <span class="about-kicker">项目经验</span>
-        <strong>3 个完整项目</strong>
+        <strong>{{ projects.length }} 个完整项目</strong>
         <p>前端工程、全栈业务、数据分析</p>
       </div>
       <div>
@@ -90,7 +98,7 @@
 
 <script setup>
 import { storeToRefs } from "pinia";
-import CampusPreview from "../components/CampusPreview.vue";
+import CityPartyPreview from "../components/CityPartyPreview.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 import SectionHeader from "../components/SectionHeader.vue";
 import TagList from "../components/TagList.vue";

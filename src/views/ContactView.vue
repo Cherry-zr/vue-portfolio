@@ -10,7 +10,7 @@
       <article class="content-card">
         <h2>GitHub</h2>
         <p>Cherry-zr</p>
-        <a class="text-button" href="https://github.com/Cherry-zr" target="_blank" rel="noreferrer">
+        <a class="text-button" href="https://github.com/Cherry-zr" target="_blank" rel="noopener noreferrer">
           打开 GitHub <span aria-hidden="true">→</span>
         </a>
       </article>

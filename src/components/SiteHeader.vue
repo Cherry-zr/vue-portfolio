@@ -12,7 +12,7 @@
       <RouterLink to="/contact">联系</RouterLink>
     </nav>
 
-    <a class="header-link" href="https://github.com/Cherry-zr" target="_blank" rel="noreferrer">
+    <a class="header-link" href="https://github.com/Cherry-zr" target="_blank" rel="noopener noreferrer">
       GitHub
     </a>
   </header>
