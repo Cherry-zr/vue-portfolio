@@ -1,43 +1,48 @@
 <template>
-  <section class="city-party-preview" aria-label="CityParty 移动端与管理后台页面预览">
-    <figure
-      v-for="(screenshot, index) in previewScreenshots"
-      :key="screenshot.id"
-      class="city-party-preview__item"
-      :class="`city-party-preview__item--${screenshot.orientation}`"
-    >
-      <CityPartyImage
-        :src="screenshot.src"
-        :alt="screenshot.title"
-        :width="screenshot.width"
-        :height="screenshot.height"
-        :orientation="screenshot.orientation"
-        :loading="index === 0 ? 'eager' : 'lazy'"
-        :fetchpriority="index === 0 ? 'high' : 'auto'"
+  <section class="city-party-preview" aria-label="同城活动发现与陌生人组局平台页面预览">
+    <figure v-if="primaryScreenshot" class="city-party-preview__primary">
+      <img
+        :src="assetUrl(primaryScreenshot.src)"
+        :alt="primaryScreenshot.title"
+        width="375"
+        height="812"
       />
-      <figcaption>{{ screenshot.title }}</figcaption>
+      <figcaption>{{ primaryScreenshot.title }}</figcaption>
     </figure>
+
+    <div class="city-party-preview__secondary">
+      <figure v-for="screenshot in secondaryScreenshots" :key="screenshot.src">
+        <img
+          :src="assetUrl(screenshot.src)"
+          :alt="screenshot.title"
+          loading="lazy"
+          width="640"
+          height="420"
+        />
+        <figcaption>{{ screenshot.title }}</figcaption>
+      </figure>
+    </div>
   </section>
 </template>
 
 <script setup>
 import { computed } from "vue";
-import CityPartyImage from "./CityPartyImage.vue";
+import { assetUrl } from "../utils/assets";
 
 const props = defineProps({
   screenshots: {
     type: Array,
     default: () => []
-  },
-  imageIds: {
-    type: Array,
-    default: () => []
   }
 });
 
-const previewScreenshots = computed(() =>
-  props.imageIds
-    .map((id) => props.screenshots.find((screenshot) => screenshot.id === id))
+const primaryScreenshot = computed(() =>
+  props.screenshots.find((screenshot) => screenshot.src.endsWith("/home.png"))
+);
+
+const secondaryScreenshots = computed(() =>
+  ["/map.png", "/admin-analytics.png"]
+    .map((fileName) => props.screenshots.find((screenshot) => screenshot.src.endsWith(fileName)))
     .filter(Boolean)
 );
 </script>

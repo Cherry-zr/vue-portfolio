@@ -1,10 +1,5 @@
 <template>
-  <CityPartyProjectDetail
-    v-if="project?.slug === 'city-party-platform'"
-    :project="project"
-  />
-
-  <section v-else-if="project" class="page section">
+  <section v-if="project" class="page section">
     <RouterLink class="back-link" to="/projects">← 返回项目列表</RouterLink>
 
     <div class="detail-hero">
@@ -110,7 +105,6 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-import CityPartyProjectDetail from "../components/CityPartyProjectDetail.vue";
 import SectionHeader from "../components/SectionHeader.vue";
 import TagList from "../components/TagList.vue";
 import { useProjectStore } from "../stores/projectStore";

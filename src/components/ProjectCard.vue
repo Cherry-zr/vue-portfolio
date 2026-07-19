@@ -1,11 +1,9 @@
 <template>
   <article class="project-card">
     <div class="project-card__meta">{{ project.subtitle }}</div>
-    <h3>{{ project.cardTitle || project.title }}</h3>
-    <strong v-if="project.cardSubtitle" class="project-card__subtitle">{{ project.cardSubtitle }}</strong>
-    <span v-if="project.status && project.highlight" class="project-card__status">{{ project.status }}</span>
+    <h3>{{ project.title }}</h3>
     <p>{{ project.summary }}</p>
-    <TagList :tags="project.homeTags || project.techStack.slice(0, 5)" />
+    <TagList :tags="project.techStack.slice(0, 5)" />
     <div class="project-card__actions">
       <RouterLink class="text-button" :to="`/projects/${project.slug}`">
         查看详情

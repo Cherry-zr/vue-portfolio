@@ -1,124 +1,17 @@
-const cityPartyScreenshots = [
-  {
-    id: "mobile-home",
-    title: "活动发现首页",
-    description: "通过分类检索和本地展示封面浏览同城活动。",
-    src: "assets/city-party/showcase/mobile-home.png",
-    group: "mobile",
-    orientation: "portrait",
-    width: 430,
-    height: 932
-  },
-  {
-    id: "mobile-map",
-    title: "附近活动地图",
-    description: "使用高德地图展示道路、地名、活动标记和距离筛选。",
-    src: "assets/city-party/showcase/mobile-map.png",
-    group: "mobile",
-    orientation: "portrait",
-    width: 430,
-    height: 932
-  },
-  {
-    id: "mobile-activity-detail",
-    title: "活动详情与报名状态",
-    description: "集中展示活动信息、地图位置、名额和当前报名状态。",
-    src: "assets/city-party/showcase/mobile-activity-detail.png",
-    group: "mobile",
-    orientation: "portrait",
-    width: 430,
-    height: 932
-  },
-  {
-    id: "mobile-waitlist",
-    title: "候补排队流程",
-    description: "满员后进入候补队列，并明确展示候补人数和业务状态。",
-    src: "assets/city-party/showcase/mobile-waitlist.png",
-    group: "mobile",
-    orientation: "portrait",
-    width: 430,
-    height: 932
-  },
-  {
-    id: "mobile-chat",
-    title: "活动实时群聊",
-    description: "活动成员通过 WebSocket 沟通集合信息和活动安排。",
-    src: "assets/city-party/showcase/mobile-chat.png",
-    group: "mobile",
-    orientation: "portrait",
-    width: 430,
-    height: 932
-  },
-  {
-    id: "mobile-notices",
-    title: "通知与未读状态",
-    description: "展示报名、群聊和评价等系统通知及其已读状态。",
-    src: "assets/city-party/showcase/mobile-notices.png",
-    group: "mobile",
-    orientation: "portrait",
-    width: 430,
-    height: 932
-  },
-  {
-    id: "mobile-credit",
-    title: "信用记录",
-    description: "记录签到、报名确认和成员互评带来的信用变化。",
-    src: "assets/city-party/showcase/mobile-credit.png",
-    group: "mobile",
-    orientation: "portrait",
-    width: 430,
-    height: 932
-  },
-  {
-    id: "admin-dashboard",
-    title: "管理员运营概览",
-    description: "汇总概览指标、趋势、热门活动排行和业务质量指标。",
-    src: "assets/city-party/showcase/admin-dashboard.png",
-    group: "admin",
-    orientation: "landscape",
-    width: 1440,
-    height: 900
-  },
-  {
-    id: "admin-analytics",
-    title: "管理员数据分析",
-    description: "按时间范围查看用户、活动、报名和评价趋势。",
-    src: "assets/city-party/showcase/admin-analytics.png",
-    group: "admin",
-    orientation: "landscape",
-    width: 1440,
-    height: 900
-  },
-  {
-    id: "admin-activities",
-    title: "管理员活动管理",
-    description: "筛选并查看展示活动、报名和候补状态。",
-    src: "assets/city-party/showcase/admin-activities.png",
-    group: "admin",
-    orientation: "landscape",
-    width: 1440,
-    height: 900
-  }
-];
-
 export const projects = [
   {
     slug: "city-party-platform",
-    title: "CityParty — 同城活动发现与陌生人组局平台",
-    cardTitle: "CityParty",
-    cardSubtitle: "同城活动发现与陌生人组局平台",
-    subtitle: "主项目 · Vue 3 / Spring Boot 全栈平台",
-    status: "公开源码 · 本地完整演示",
-    deploymentNote: "暂未开放公网业务 Demo",
+    title: "同城活动发现与陌生人组局平台",
+    subtitle: "主项目 · Vue 3 全栈业务平台",
+    status: "完整项目 · 本地演示 · 公开源码",
     role: "个人独立完成，前端主导并完成全栈实现",
     summary:
-      "CityParty 是一个基于 Vue 3 与 Spring Boot 的同城活动组局平台，覆盖活动发现、地图浏览、报名候补、实时群聊、互评信用和管理员数据分析等业务流程。",
+      "面向同城线下社交场景的活动发现与陌生人组局平台，覆盖活动发布、地图浏览、报名候补、实时群聊、互评信用和管理员运营分析等完整业务流程。",
     description:
-      "项目面向同城线下活动场景，同时提供移动端用户业务和管理员运营后台，通过 REST API、WebSocket 与高德地图连接活动发现、参与和结束后的完整互动流程。项目支持本地完整运行，当前未部署公网业务环境。",
-    homeTags: ["Vue 3", "Spring Boot", "WebSocket", "地图活动", "运营看板"],
-    listTags: ["Vue 3", "Spring Boot", "WebSocket", "MySQL", "Redis"],
+      "项目采用 Vue 3 与 Spring Boot 构建，前端同时包含移动端用户页面和管理员后台，通过 REST API、WebSocket 与高德地图完成复杂业务交互，并配套自动化测试、Docker Compose、CI 和安全扫描。",
     techStack: [
       "Vue 3",
+      "JavaScript",
       "Vite",
       "Vue Router",
       "Pinia",
@@ -128,112 +21,62 @@ export const projects = [
       "ECharts",
       "WebSocket",
       "高德地图 JS API",
-      "Java 17",
       "Spring Boot",
       "MyBatis-Plus",
-      "Maven",
       "MySQL",
       "Redis",
       "JWT",
-      "PBKDF2",
       "Docker Compose",
       "GitHub Actions",
-      "Gitleaks",
-      "Playwright",
-      "JUnit"
-    ],
-    techGroups: [
-      { title: "用户端", items: ["Vue 3", "Vite", "Vue Router", "Pinia", "Axios", "Vant"] },
-      { title: "管理后台", items: ["Vue 3", "Element Plus", "ECharts"] },
-      { title: "后端", items: ["Java 17", "Spring Boot", "MyBatis-Plus", "Maven"] },
-      { title: "数据与缓存", items: ["MySQL", "Redis"] },
-      { title: "地图与实时通信", items: ["高德地图 JS API", "WebSocket"] },
-      { title: "工程化", items: ["Playwright", "JUnit", "Docker Compose", "GitHub Actions", "Gitleaks"] }
+      "Playwright"
     ],
     features: [
-      "活动发现、分类检索、详情查看和地图附近活动浏览",
-      "报名审核、容量控制、候补排队与候补状态展示",
-      "WebSocket 活动群聊、系统通知和未读状态",
-      "活动发布、编辑、取消和结束等生命周期管理",
-      "活动结束后的成员互评、信用记录和信用分更新",
-      "管理员概览、趋势、分布、质量指标和活动管理",
-      "Docker Compose、自动化测试、CI 与密钥扫描"
-    ],
-    featureCards: [
-      { title: "活动发现与地图浏览", description: "通过分类检索、活动详情、高德地图和距离筛选发现附近活动。" },
-      { title: "活动生命周期管理", description: "覆盖活动发布、编辑、取消和结束等关键状态变化。" },
-      { title: "报名审核与候补队列", description: "处理容量限制、报名审核、候补排队和候补转正流程。" },
-      { title: "WebSocket 活动群聊", description: "通过身份校验后进入活动群聊，消息持久化并实时广播。" },
-      { title: "通知与未读状态", description: "为报名、群聊和互评等业务事件维护系统通知与未读状态。" },
-      { title: "互评与信用记录", description: "活动结束后支持成员互评，并形成可追踪的信用变化记录。" },
-      { title: "管理员运营概览", description: "展示概览指标、趋势、分布、业务质量和热门活动排行。" },
-      { title: "数据分析与活动管理", description: "按时间范围分析数据，并筛选查看活动、报名和候补状态。" }
-    ],
-    workflow: [
-      "发现活动",
-      "查看详情",
-      "报名或候补",
-      "发起人审核",
-      "群聊与通知",
-      "活动结束",
-      "成员互评",
-      "信用记录更新"
+      "活动列表、详情、发布、编辑、取消和结束等生命周期管理",
+      "基于高德地图的附近活动浏览、位置选择和距离筛选",
+      "报名审核、退出、候补队列与候补转正流程",
+      "基于 WebSocket 的活动群聊、系统通知和未读状态",
+      "活动结束后的用户互评、信用记录和信用分更新",
+      "管理员后台的用户、活动、报名、评价和信用管理",
+      "基于 ECharts 的运营概览、趋势、分布、质量指标和热门活动排行",
+      "loading、empty、error、retry 和登录失效等页面状态处理",
+      "Docker Compose、自动化测试、CI 与密钥扫描等工程化交付"
     ],
     challenges: [
       {
-        title: "报名与候补一致性",
-        problem: "多人同时报名时，需要降低重复报名、名额超卖和候补顺序错乱的风险。",
+        title: "报名并发与候补一致性",
         solution:
-          "通过数据库唯一约束和条件更新控制报名状态与活动名额；Redis 维护候补顺序，MySQL 保存最终业务状态，并在缓存不可用时回退查询最早的 WAITING 记录。",
-        value: "让报名、满员和候补状态保持可追踪，并降低并发超员风险。"
+          "通过数据库唯一约束避免同一用户重复报名，使用条件更新控制活动名额；Redis List 维护候补顺序，MySQL 保存最终业务状态，Redis 不可用时回退查询最早的 WAITING 记录。"
       },
       {
-        title: "鉴权与账号安全",
-        problem: "仅校验 JWT 本身不足以反映账号被禁用或角色变化后的实时状态。",
+        title: "实时群聊与身份校验",
         solution:
-          "JWT 请求鉴权会继续复核数据库中的用户状态和角色；密码使用 PBKDF2，并保留旧密码摘要的升级路径。",
-        value: "避免失效账号或错误角色继续访问受限业务，同时支持密码策略平滑升级。"
+          "WebSocket 握手阶段校验 JWT 并复核数据库用户状态，发送消息前再次检查活动发起人或已通过报名成员身份，消息持久化后仅向有权限的在线成员广播。"
       },
       {
-        title: "实时互动闭环",
-        problem: "群聊、通知、互评和信用记录分布在活动参与的不同阶段，需要共享可靠的成员边界。",
+        title: "地图页面与异步状态",
         solution:
-          "WebSocket 握手和消息发送都会校验活动成员身份；系统通知维护未读状态，活动结束后支持成员互评并形成信用记录。",
-        value: "把活动开始前、进行中和结束后的互动串联为完整业务流程。"
+          "统一处理地图脚本加载、浏览器定位、默认城市降级、附近活动查询和距离筛选，并为地图与列表分别提供加载、空数据、失败提示和重试状态。"
       },
       {
-        title: "管理员运营分析",
-        problem: "不同时间范围和数据为空时，趋势与业务质量指标仍需保持统一口径和稳定展示。",
+        title: "管理员数据看板",
         solution:
-          "后台统一概览、趋势、分布、质量指标和热门活动排行的数据口径，前端使用 ECharts 展示并处理空日期与除零场景。",
-        value: "让管理端能够从活动规模、参与效果和业务质量多个角度查看本地展示数据。"
-      },
-      {
-        title: "工程化与展示可靠性",
-        problem: "地图、字体、封面、接口数据和 ECharts 都可能造成自动截图内容不完整或不稳定。",
-        solution:
-          "使用 JUnit、Playwright、Docker Compose、GitHub Actions 和 Gitleaks 完成工程验证；截图流程同时检查接口、字体、图片自然尺寸、地图标记、ECharts 画布和连续视觉稳定性。",
-        value: "避免把缺图、空图表或未加载地图的页面误作为正式作品截图。"
+          "为多种时间范围定义统一指标口径，趋势和分布接口补齐空日期并处理除零；前端使用 ECharts 展示数据，同时覆盖 loading、empty、error 和 retry 状态。"
       }
     ],
-    screenshots: cityPartyScreenshots,
-    showcase: {
-      home: ["admin-dashboard", "mobile-home", "mobile-map"],
-      list: ["admin-dashboard", "mobile-map"],
-      detailHero: ["admin-dashboard", "mobile-map"]
-    },
-    quality: [
-      { label: "后端测试", value: "94 项通过", detail: "项目最终验收记录" },
-      { label: "前端生产构建", value: "通过", detail: "npm run build" },
-      { label: "Playwright E2E", value: "4 项通过", detail: "现有冒烟测试" },
-      { label: "展示截图门禁", value: "10 张通过", detail: "自动检查与人工复核" },
-      { label: "本地环境", value: "Docker Compose", detail: "支持 MySQL / Redis" },
-      { label: "CI 与安全", value: "GitHub Actions + Gitleaks", detail: "持续集成与密钥扫描" }
+    screenshots: [
+      { title: "移动端活动首页", src: "assets/city-party/home.png" },
+      { title: "附近活动地图与距离筛选", src: "assets/city-party/map.png" },
+      { title: "报名与候补流程", src: "assets/city-party/waitlist.png" },
+      { title: "WebSocket 活动群聊", src: "assets/city-party/chat.png" },
+      { title: "管理员运营概览", src: "assets/city-party/admin-overview.png" },
+      { title: "管理员数据分析", src: "assets/city-party/admin-analytics.png" }
     ],
-    limitations: [
-      "暂未部署公网业务环境，作品集只提供公开源码和本地演示截图。",
-      "地图功能需要开发者在本地配置自己的高德地图 Key 与安全密钥。",
-      "部分扩展业务保留基础结构，当前重点展示已完成的核心活动流程。"
+    quality: [
+      "后端测试：85 项通过，失败 0、错误 0、跳过 0",
+      "前端生产构建：npm ci 与 npm run build 通过",
+      "Playwright：2 个冒烟用例通过，失败 0",
+      "Docker Compose：配置检查和空数据卷初始化通过",
+      "GitHub Actions：CI 与 Security Scan 成功，Gitleaks 最终验收未发现泄漏"
     ],
     githubUrl: "https://github.com/Cherry-zr/city-party-platform",
     highlight: true
