@@ -34,6 +34,42 @@ CityParty 公开源码：
 https://github.com/Cherry-zr/city-party-platform
 ```
 
+## CityParty 项目截图
+
+以下截图来自 CityParty 本地演示环境，覆盖移动端活动发现、地图、报名候补、群聊与通知，以及管理后台的运营、活动和数据分析页面。
+
+### 移动端用户流程
+
+<table>
+  <tr>
+    <td align="center"><img src="public/assets/city-party/showcase/mobile-home.png" alt="CityParty 移动端活动首页" width="210"><br><sub>活动发现首页</sub></td>
+    <td align="center"><img src="public/assets/city-party/showcase/mobile-map.png" alt="CityParty 附近活动地图" width="210"><br><sub>附近活动地图</sub></td>
+    <td align="center"><img src="public/assets/city-party/showcase/mobile-activity-detail.png" alt="CityParty 活动详情" width="210"><br><sub>活动详情与报名</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="public/assets/city-party/showcase/mobile-waitlist.png" alt="CityParty 报名候补" width="210"><br><sub>报名与候补流程</sub></td>
+    <td align="center"><img src="public/assets/city-party/showcase/mobile-chat.png" alt="CityParty 活动群聊" width="210"><br><sub>WebSocket 活动群聊</sub></td>
+    <td align="center"><img src="public/assets/city-party/showcase/mobile-notices.png" alt="CityParty 通知中心" width="210"><br><sub>活动通知中心</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="public/assets/city-party/showcase/mobile-credit.png" alt="CityParty 信用记录" width="210"><br><sub>信用记录</sub></td>
+  </tr>
+</table>
+
+### 管理后台
+
+#### 管理员运营概览
+
+![CityParty 管理员运营概览](public/assets/city-party/showcase/admin-dashboard.png)
+
+#### 活动管理
+
+![CityParty 活动管理](public/assets/city-party/showcase/admin-activities.png)
+
+#### 数据分析
+
+![CityParty 数据分析](public/assets/city-party/showcase/admin-analytics.png)
+
 ## 页面
 
 - 首页：个人定位、核心技术栈、CityParty 主项目预览和四个精选项目
