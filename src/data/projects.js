@@ -327,5 +327,39 @@ export const projects = [
       { title: "IMDb 对比分析", src: "assets/movie/imdb_comparison.png" }
     ],
     demoRoute: "/demo/movie-analysis"
+  },
+  {
+    slug: "douguo-ui-clone",
+    title: "豆果美食 UI 复刻",
+    subtitle: "移动端学习复刻 · GitHub Pages Demo",
+    status: "学习项目 · 持续完善中",
+    role: "移动端界面复刻、接口适配与静态部署",
+    summary:
+      "基于 Vue 3、TypeScript、Vite 和 Vant 实现移动端菜谱应用界面与交互。非官方学习复刻项目，仅用于前端开发学习和课程展示。",
+    description:
+      "项目复刻移动端菜谱浏览、搜索、分类、话题、详情和公开用户查询流程，通过公开 HTTPS 接口读取只读内容，并针对 GitHub Pages 子路径、Hash 路由和移动端安全区完成部署适配。",
+    techStack: ["Vue 3", "TypeScript", "Vite", "Vue Router", "Vant", "Axios"],
+    features: [
+      "首页推荐、关注、笔记、视频和活动频道",
+      "菜谱搜索、多级分类和热门话题",
+      "菜谱与笔记详情、评论及相关内容",
+      "公开用户资料、作品、收藏和发布日历",
+      "AI 营养师与登录能力的真实限制说明",
+      "GitHub Pages 子路径与移动端响应式适配"
+    ],
+    challenges: [
+      {
+        title: "多项目 Pages 子路径部署",
+        solution: "生产构建使用独立 Vite base 和 Hash 路由，将子项目产物组装到主站 artifact 的 douguo 目录，避免影响现有项目。"
+      },
+      {
+        title: "静态托管与远程接口限制",
+        solution: "开发环境保留 Vite 代理，生产环境统一使用允许 Pages Origin 的 HTTPS 接口，并为超时、签名失败和空响应保留明确错误态。"
+      }
+    ],
+    demoUrl: "https://cherry-zr.github.io/vue-portfolio/douguo/",
+    githubUrl: "https://github.com/Cherry-zr/vue-portfolio/tree/main/projects/douguo",
+    showCardStatus: true,
+    highlight: false
   }
 ];

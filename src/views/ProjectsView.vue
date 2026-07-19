@@ -21,7 +21,16 @@
           </div>
           <div class="project-row__actions">
             <RouterLink class="btn btn-primary" :to="`/projects/${project.slug}`">查看详情</RouterLink>
-            <RouterLink v-if="project.demoRoute" class="btn btn-secondary" :to="project.demoRoute">在线 Demo</RouterLink>
+            <a
+              v-if="project.demoUrl"
+              class="btn btn-secondary"
+              :href="project.demoUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              在线 Demo
+            </a>
+            <RouterLink v-else-if="project.demoRoute" class="btn btn-secondary" :to="project.demoRoute">在线 Demo</RouterLink>
             <a
               v-if="project.githubUrl"
               class="btn btn-secondary"

@@ -27,12 +27,31 @@ jobs:
         with:
           node-version: 24
           cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            projects/douguo/package-lock.json
 
-      - name: Install dependencies
+      - name: Install portfolio dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build portfolio
         run: npm run build
+
+      - name: Install Douguo dependencies
+        working-directory: projects/douguo
+        run: npm ci
+
+      - name: Build Douguo
+        working-directory: projects/douguo
+        env:
+          VITE_API_BASE_URL: https://apis.netstart.cn/douguo
+        run: npm run build
+
+      - name: Assemble Pages artifact
+        run: |
+          mkdir -p dist/douguo
+          cp -R projects/douguo/dist/. dist/douguo/
+          touch dist/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
