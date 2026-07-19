@@ -27,6 +27,7 @@
 2. **校园二手交易平台**：早期全栈实践，作品集保留基于 mock 数据的 GitHub Pages 静态 Demo。
 3. **LuxeStay 酒店管理系统**：传统 Java Web 管理系统，展示后台业务模块和页面截图。
 4. **电影评分数据分析与可视化**：使用 Python 完成数据清洗、统计分析、图表与报告生成。
+5. **豆果美食 UI 复刻**：使用 Vue 3、TypeScript、Vite 和 Vant 实现移动端菜谱浏览与交互，并作为独立子项目部署到 GitHub Pages。
 
 CityParty 公开源码：
 
@@ -72,7 +73,7 @@ https://github.com/Cherry-zr/city-party-platform
 
 ## 页面
 
-- 首页：个人定位、核心技术栈、CityParty 主项目预览和四个精选项目
+- 首页：个人定位、核心技术栈、CityParty 主项目预览和五个精选项目
 - 关于我：个人简介、教育背景和求职方向
 - 技能栈：前端、后端、数据库和工具分类
 - 项目展示：全部项目及可用的 Demo、GitHub 入口
@@ -110,12 +111,28 @@ npm run preview
 
 构建产物位于 `dist`。
 
+### 豆果美食子项目
+
+```powershell
+Set-Location .\projects\douguo
+npm ci
+npm run dev
+```
+
+本地开发地址为 `http://localhost:5174/home`。生产构建使用 `/vue-portfolio/douguo/` 作为静态资源基础路径，并在 GitHub Pages 中使用 Hash 路由。
+
 ## GitHub Pages 部署
 
 部署地址：
 
 ```text
 https://cherry-zr.github.io/vue-portfolio/#/
+```
+
+豆果美食 UI 复刻：
+
+```text
+https://cherry-zr.github.io/vue-portfolio/douguo/#/home
 ```
 
 `vite.config.js` 已配置仓库基础路径：
@@ -127,18 +144,21 @@ base: "/vue-portfolio/"
 仓库使用 `.github/workflows/deploy.yml` 部署：
 
 1. GitHub Pages Source 选择 GitHub Actions。
-2. 推送到 `main` 分支后通过 `npm ci` 安装锁定依赖并构建。
-3. 工作流上传 `dist` 并发布到 GitHub Pages。
+2. 推送到 `main` 分支后，主站和 `projects/douguo` 分别通过 `npm ci` 安装锁定依赖并构建。
+3. 豆果构建产物复制到 `dist/douguo/`，不会覆盖主站入口或其他项目。
+4. 工作流只上传一次完整 `dist` 并发布到 GitHub Pages。
 
 ## 展示边界
 
 - CityParty 当前提供公开源码、本地完整演示和真实截图，不提供虚假的公网在线 Demo。
+- 豆果美食 UI 复刻是非官方学习项目，仅用于前端开发学习和课程展示。
+- 豆果项目生产环境读取 `https://apis.netstart.cn/douguo` 的公开 HTTPS 数据；接口、远程图片、CORS 或签名策略可能随上游变化。
+- 登录和 AI 营养师仅提供真实能力限制说明，不模拟登录成功、Token、健康数据或 AI 回答。
 - 作品集中的工程质量数据均来自项目仓库的历史验收记录，不作为线上生产指标。
 - 页面不会公开本机绝对路径、环境变量、密码、Token、地图 Key 或数据库凭据。
-- 饭先食谱 App 尚未加入公开项目列表，需在提供源码、截图和完整资料后再补充。
 
 ## 推荐提交信息
 
 ```text
-feat: improve CityParty project showcase
+feat: add douguo app to GitHub Pages
 ```

@@ -14,11 +14,20 @@
         <p>{{ project.description }}</p>
       </div>
       <div class="detail-actions">
-        <RouterLink v-if="project.demoRoute" class="btn btn-primary" :to="project.demoRoute">查看在线 Demo</RouterLink>
+        <a
+          v-if="project.demoUrl"
+          class="btn btn-primary"
+          :href="project.demoUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          查看在线 Demo
+        </a>
+        <RouterLink v-else-if="project.demoRoute" class="btn btn-primary" :to="project.demoRoute">查看在线 Demo</RouterLink>
         <a
           v-if="project.githubUrl"
           class="btn"
-          :class="project.demoRoute ? 'btn-secondary' : 'btn-primary'"
+          :class="project.demoUrl || project.demoRoute ? 'btn-secondary' : 'btn-primary'"
           :href="project.githubUrl"
           target="_blank"
           rel="noopener noreferrer"
