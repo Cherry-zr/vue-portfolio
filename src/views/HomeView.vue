@@ -43,11 +43,18 @@
           {{ featured.summary }}
         </p>
 
+        <TagList class="featured-panel__tags" :tags="featured.homeTags" />
+
         <ul class="feature-list">
           <li v-for="feature in featured.features.slice(0, 3)" :key="feature">{{ feature }}</li>
         </ul>
 
-        <CityPartyPreview :screenshots="featured.screenshots" />
+        <p class="featured-panel__deployment">{{ featured.deploymentNote }}</p>
+
+        <CityPartyPreview
+          :screenshots="featured.screenshots"
+          :image-ids="featured.showcase.home"
+        />
       </aside>
     </section>
 

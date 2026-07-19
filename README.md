@@ -5,7 +5,8 @@
 ## 项目特点
 
 - 首页主项目为 CityParty——同城活动发现与陌生人组局平台。
-- 使用真实运行截图展示移动端 H5、地图、WebSocket 群聊和管理员数据看板。
+- 使用 10 张已复核的本地运行截图展示移动端 H5、地图、WebSocket 群聊和管理员数据看板。
+- CityParty 详情页按用户端与管理后台组织画廊，支持无依赖大图查看和图片加载失败提示。
 - 项目数据集中维护，Demo、GitHub 和工程质量区域按字段条件渲染。
 - 校园二手交易平台保留完整静态 Demo 和相关交互路由。
 - 路由使用 hash 模式，兼容 GitHub Pages 刷新访问。
@@ -39,7 +40,7 @@ https://github.com/Cherry-zr/city-party-platform
 - 关于我：个人简介、教育背景和求职方向
 - 技能栈：前端、后端、数据库和工具分类
 - 项目展示：全部项目及可用的 Demo、GitHub 入口
-- 项目详情：项目介绍、技术栈、功能模块、难点、工程质量和真实截图
+- 项目详情：项目介绍、技术栈、功能模块、难点、工程质量和响应式截图画廊
 - 静态 Demo：校园二手、酒店管理和电影数据分析展示
 - 联系方式：GitHub 与邮箱
 
@@ -90,7 +91,7 @@ base: "/vue-portfolio/"
 仓库使用 `.github/workflows/deploy.yml` 部署：
 
 1. GitHub Pages Source 选择 GitHub Actions。
-2. 推送到 `main` 分支后自动安装依赖并构建。
+2. 推送到 `main` 分支后通过 `npm ci` 安装锁定依赖并构建。
 3. 工作流上传 `dist` 并发布到 GitHub Pages。
 
 ## 展示边界
@@ -103,5 +104,5 @@ base: "/vue-portfolio/"
 ## 推荐提交信息
 
 ```text
-feat: feature CityParty in portfolio
+feat: improve CityParty project showcase
 ```
